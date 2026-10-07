@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sathwik Ailu | Software Engineer & AI Developer Portfolio</title>
+  <meta name="description" content="Portfolio of Sathwik Ailu - Full-Stack Software Developer, AI/ML Integration Engineer, and Computer Science Engineering graduate from MRCET." />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#f0fdf4',
+              100: '#dcfce7',
+              400: '#4ade80',
+              500: '#22c55e',
+              600: '#16a34a',
+            },
+            accent: {
+              blue: '#3b82f6',
+              indigo: '#6366f1',
+              violet: '#8b5cf6',
+              cyan: '#06b6d4',
+            },
+            dark: {
+              bg: '#0B0F17',
+              card: '#111827',
+              border: '#1F2937',
+              subtle: '#1E293B',
+            }
+          },
+          animation: {
+            'blob': 'blob 10s infinite',
+            'float': 'float 4s ease-in-out infinite',
+            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+          },
+          keyframes: {
+            blob: {
+              '0%': { transform: 'translate(0px, 0px) scale(1)' },
+              '33%': { transform: 'translate(30px, -40px) scale(1.1)' },
+              '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+              '100%': { transform: 'translate(0px, 0px) scale(1)' },
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-10px)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0B0F17;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #334155;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #475569;
+    }
+
+    .glass {
+      background: rgba(17, 24, 39, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    
+    .light .glass {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .glow-effect {
+      position: relative;
+    }
+    .glow-effect::before {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6, #10b981);
+      border-radius: inherit;
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      filter: blur(8px);
+    }
+    .glow-effect:hover::before {
+      opacity: 0.8;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #60A5FA, #A78BFA, #34D399);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+</head>
+<body class="bg-[#0B0F17] text-slate-200 antialiased font-sans transition-colors duration-300 selection:bg-indigo-500 selection:text-white">
+
+  <!-- Background Decorative Mesh / Ambient Lights -->
+  <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+    <div class="absolute -top-40 -left-40 w-96 h-96 bg-indigo-600/15 rounded-full blur-[120px] animate-blob"></div>
+    <div class="absolute top-1/3 -right-40 w-96 h-96 bg-blue-600/15 rounded-full blur-[120px] animate-blob" style="animation-delay: 2s;"></div>
+    <div class="absolute -bottom-40 left-1/3 w-96 h-96 bg-emerald-600/15 rounded-full blur-[120px] animate-blob" style="animation-delay: 4s;"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:24px_24px] opacity-25"></div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <header class="fixed top-0 left-0 right-0 z-50 px-4 sm:px-8 pt-4">
+    <nav class="max-w-6xl mx-auto glass rounded-2xl px-6 py-3.5 flex items-center justify-between shadow-2xl transition-all">
+      <a href="#hero" class="flex items-center gap-2 group">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-500 to-emerald-400 p-[1.5px] shadow-lg shadow-indigo-500/20 group-hover:scale-105 transition">
+          <div class="w-full h-full bg-[#0B0F17] rounded-[10px] flex items-center justify-center font-mono font-bold text-transparent bg-clip-text bg-gradient-to-br from-indigo-400 to-emerald-300">
+            SA
+          </div>
+        </div>
+        <span class="font-bold tracking-tight text-white group-hover:text-indigo-400 transition hidden sm:inline">Sathwik Ailu</span>
+      </a>
+
+      <!-- Desktop Nav Items -->
+      <div class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-300">
+        <a href="#about" class="hover:text-indigo-400 transition">About</a>
+        <a href="#skills" class="hover:text-indigo-400 transition">Skills</a>
+        <a href="#projects" class="hover:text-indigo-400 transition">Projects</a>
+        <a href="#demo" class="hover:text-indigo-400 transition flex items-center gap-1.5 text-emerald-400">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+          </span>
+          Interactive Demo
+        </a>
+        <a href="#certifications" class="hover:text-indigo-400 transition">Certifications</a>
+        <a href="#contact" class="hover:text-indigo-400 transition">Contact</a>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-3">
+        <a href="assets/resume.pdf" download="Sathwik_Ailu_Resume.pdf" class="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 text-white transition">
+          <i data-lucide="file-text" class="w-3.5 h-3.5 text-indigo-400"></i>
+          Resume
+        </a>
+        <a href="#contact" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold bg-gradient-to-r from-indigo-500 to-emerald-500 hover:from-indigo-600 hover:to-emerald-600 text-white shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 transition">
+          <i data-lucide="mail" class="w-3.5 h-3.5"></i>
+          Hire Me
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="relative z-10 pt-28 pb-16">
+    
+    <!-- Hero Section -->
+    <section id="hero" class="max-w-6xl mx-auto px-4 sm:px-6 pt-12 pb-20">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Hero Text -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          
+          <!-- Badge -->
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold tracking-wide">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span>Seeking Software Engineer & Full-Stack Roles</span>
+          </div>
+
+          <!-- Main Title -->
+          <div class="space-y-2">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+              Hi, I'm <br class="hidden sm:block"/>
+              <span class="gradient-text">Sathwik Ailu</span>
+            </h1>
+            <div class="h-10 flex items-center justify-center lg:justify-start font-mono text-lg sm:text-xl text-slate-300">
+              <span class="text-indigo-400 mr-2">&gt;</span>
+              <span id="typewriter" class="border-r-2 border-indigo-400 pr-1"></span>
+            </div>
+          </div>
+
+          <!-- Description -->
+          <p class="text-slate-400 text-base sm:text-lg max-w-xl leading-relaxed">
+            Final-year Computer Science Engineering student at <strong>MRCET (9.05 CGPA)</strong>. Specialized in building production-ready <strong>full-stack web applications</strong>, <strong>native Android systems</strong>, and integrating <strong>Gemini & LLM AI solutions</strong> end-to-end.
+          </p>
+
+          <!-- CTAs -->
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+            <a href="#projects" class="px-6 py-3.5 rounded-xl text-sm font-semibold bg-gradient-to-r from-indigo-500 via-indigo-600 to-emerald-500 hover:from-indigo-600 hover:to-emerald-600 text-white shadow-xl shadow-indigo-500/25 hover:shadow-indigo-500/40 transition flex items-center gap-2">
+              <span>View Projects</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+            <a href="https://github.com/sathwikailu" target="_blank" rel="noopener noreferrer" class="px-5 py-3.5 rounded-xl text-sm font-semibold glass hover:bg-slate-800 text-slate-200 border border-slate-700/80 transition flex items-center gap-2">
+              <i data-lucide="github" class="w-4 h-4"></i>
+              <span>GitHub</span>
+            </a>
+            <a href="https://linkedin.com/in/sathwik-ailu-a81623372" target="_blank" rel="noopener noreferrer" class="px-5 py-3.5 rounded-xl text-sm font-semibold glass hover:bg-slate-800 text-slate-200 border border-slate-700/80 transition flex items-center gap-2">
+              <i data-lucide="linkedin" class="w-4 h-4 text-blue-400"></i>
+              <span>LinkedIn</span>
+            </a>
+          </div>
+
+          <!-- Quick Contact Tags -->
+          <div class="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-y-2 gap-x-6 text-xs text-slate-400">
+            <span class="flex items-center gap-1.5"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-rose-400"></i> Hyderabad, Telangana</span>
+            <span class="flex items-center gap-1.5"><i data-lucide="mail" class="w-3.5 h-3.5 text-amber-400"></i> sathwikailu57@gmail.com</span>
+            <span class="flex items-center gap-1.5"><i data-lucide="phone" class="w-3.5 h-3.5 text-emerald-400"></i> +91 8143632409</span>
+          </div>
+
+        </div>
+
+        <!-- Hero Avatar / Profile Card -->
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="relative group">
+            
+            <!-- Animated Gradient Halo -->
+            <div class="absolute -inset-2 bg-gradient-to-r from-indigo-500 via-purple-500 to-emerald-400 rounded-3xl blur-xl opacity-60 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
+            
+            <!-- Card Frame -->
+            <div class="relative w-72 sm:w-80 bg-slate-900/90 rounded-3xl p-4 border border-slate-800 shadow-2xl backdrop-blur-xl">
+              
+              <div class="relative overflow-hidden rounded-2xl aspect-[3/4] bg-slate-800 border border-slate-700/50">
+                <img src="assets/profile.jpg" alt="Sathwik Ailu" class="w-full h-full object-cover object-top filter contrast-105 group-hover:scale-105 transition duration-500" />
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+                
+                <!-- Bottom Float on Photo -->
+                <div class="absolute bottom-3 left-3 right-3 p-3 rounded-xl glass border border-white/10 text-xs">
+                  <div class="flex items-center justify-between">
+                    <div>
+                      <p class="font-bold text-white">Sathwik Ailu</p>
+                      <p class="text-[11px] text-slate-300">CSE @ MRCET</p>
+                    </div>
+                    <div class="px-2 py-1 rounded-lg bg-emerald-500/20 text-emerald-400 font-mono font-bold text-[11px] border border-emerald-500/30">
+                      9.05 CGPA
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Mini Status Badge below Image -->
+              <div class="mt-3 flex items-center justify-between text-xs text-slate-400 px-1">
+                <span class="flex items-center gap-1.5">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                  Ready to contribute
+                </span>
+                <span class="font-mono text-slate-500">Graduating 2026/27</span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Quick Metrics Ribbon -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16">
+        <div class="glass p-5 rounded-2xl border border-slate-800 hover:border-slate-700 transition group">
+          <div class="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-400 font-mono">9.05</div>
+          <div class="text-xs font-semibold text-slate-300 mt-1">B.Tech CSE CGPA</div>
+          <div class="text-[11px] text-slate-500 mt-0.5">Malla Reddy College (MRCET)</div>
+        </div>
+        <div class="glass p-5 rounded-2xl border border-slate-800 hover:border-slate-700 transition group">
+          <div class="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400 font-mono">4+</div>
+          <div class="text-xs font-semibold text-slate-300 mt-1">Key Engineered Projects</div>
+          <div class="text-[11px] text-slate-500 mt-0.5">Android, Fullstack & AI</div>
+        </div>
+        <div class="glass p-5 rounded-2xl border border-slate-800 hover:border-slate-700 transition group">
+          <div class="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-pink-400 font-mono">5+</div>
+          <div class="text-xs font-semibold text-slate-300 mt-1">Verified Credentials</div>
+          <div class="text-[11px] text-slate-500 mt-0.5">Anthropic, Google, freeCodeCamp</div>
+        </div>
+        <div class="glass p-5 rounded-2xl border border-slate-800 hover:border-slate-700 transition group">
+          <div class="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-400 font-mono">100%</div>
+          <div class="text-xs font-semibold text-slate-300 mt-1">End-to-End Ownership</div>
+          <div class="text-[11px] text-slate-500 mt-0.5">Architecture to Deployment</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="max-w-6xl mx-auto px-4 sm:px-6 py-16 border-t border-slate-800/80">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+        
+        <div class="lg:col-span-5 space-y-4">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-indigo-500/10 text-indigo-400 text-xs font-semibold">
+            <i data-lucide="user" class="w-3.5 h-3.5"></i>
+            About Me
+          </div>
+          <h2 class="text-3xl font-bold text-white tracking-tight">Passionate Engineer Crafting Smart Web & AI Experiences</h2>
+          <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+            I am a final-year Computer Science Engineering student with a deep fascination for building high-performance web systems and integrating intelligent Large Language Models into user-centric applications.
+          </p>
+          <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+            Whether it is creating native Android applications with zero-backend direct Gemini LLM parsing, developing full-stack dynamic portfolio portals, or building real-time peer coding environments, I focus on clean architecture, responsive design, and rapid delivery.
+          </p>
+
+          <div class="pt-2">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Core Philosophy & Strengths</h4>
+            <div class="grid grid-cols-2 gap-2 text-xs">
+              <div class="flex items-center gap-2 p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300">
+                <i data-lucide="zap" class="w-4 h-4 text-amber-400"></i> Fast Learner & Adaptable
+              </div>
+              <div class="flex items-center gap-2 p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300">
+                <i data-lucide="layers" class="w-4 h-4 text-indigo-400"></i> Full SDLC Ownership
+              </div>
+              <div class="flex items-center gap-2 p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300">
+                <i data-lucide="cpu" class="w-4 h-4 text-emerald-400"></i> AI & Prompt Engineering
+              </div>
+              <div class="flex items-center gap-2 p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300">
+                <i data-lucide="users" class="w-4 h-4 text-blue-400"></i> Agile & Collaborative
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 space-y-6">
+          
+          <!-- Education Card -->
+          <div class="glass p-6 rounded-2xl border border-slate-800 space-y-3 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-indigo-500/10 rounded-full blur-2xl"></div>
+            <div class="flex items-start justify-between flex-wrap gap-2">
+              <div>
+                <span class="text-xs font-bold text-indigo-400 uppercase tracking-wide">Education</span>
+                <h3 class="text-lg font-bold text-white">B.Tech in Computer Science Engineering</h3>
+                <p class="text-sm text-slate-300 font-medium">Malla Reddy College of Engineering & Technology (MRCET)</p>
+              </div>
+              <div class="text-right">
+                <span class="inline-block px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-300 font-mono text-xs font-semibold">2022 - 2026</span>
+                <div class="text-xs text-emerald-400 font-mono font-bold mt-1">CGPA: 9.05 / 10</div>
+              </div>
+            </div>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              <strong>Key Coursework:</strong> Data Structures & Algorithms, Object-Oriented Programming (OOP), Database Management Systems (DBMS), Operating Systems, Computer Networks, Machine Learning, Big Data Analytics (Hadoop, Spark), IoT, and Digital Forensics.
+            </p>
+          </div>
+
+          <!-- Experience / Mindset Card -->
+          <div class="glass p-6 rounded-2xl border border-slate-800 space-y-3">
+            <span class="text-xs font-bold text-emerald-400 uppercase tracking-wide">Engineering Approach</span>
+            <h3 class="text-lg font-bold text-white">Building Solutions that Bridge Modern Web & AI</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Experienced in taking concepts from initial schema design and UI wireframes to RESTful API endpoints, WebSockets real-time sync, and client-side prompt engineering. Proficient with modern AI agent workflows (Anthropic Claude Code, Google Gemini) to accelerate productivity and maintain high code quality standards.
+            </p>
+            <div class="flex flex-wrap gap-2 pt-1">
+              <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-[11px] font-mono text-slate-300 border border-slate-700">Client-Side LLM Parsing</span>
+              <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-[11px] font-mono text-slate-300 border border-slate-700">Real-time WebSockets</span>
+              <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-[11px] font-mono text-slate-300 border border-slate-700">JWT Authentication</span>
+              <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-[11px] font-mono text-slate-300 border border-slate-700">REST Architecture</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Technical Skills Section -->
+    <section id="skills" class="max-w-6xl mx-auto px-4 sm:px-6 py-16 border-t border-slate-800/80">
+      <div class="text-center max-w-2xl mx-auto mb-12 space-y-2">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-indigo-500/10 text-indigo-400 text-xs font-semibold">
+          <i data-lucide="code-2" class="w-3.5 h-3.5"></i>
+          Technical Expertise
+        </div>
+        <h2 class="text-3xl font-bold text-white tracking-tight">Skills & Tech Stack</h2>
+        <p class="text-slate-400 text-sm">Comprehensive toolkit spanning frontend development, backend services, databases, and AI integration.</p>
+      </div>
+
+      <!-- Skill Categories Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Category 1: Languages -->
+        <div class="glass p-6 rounded-2xl border border-slate-800 hover:border-indigo-500/50 transition space-y-4">
+          <div class="w-10 h-10 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center">
+            <i data-lucide="terminal" class="w-5 h-5"></i>
+          </div>
+          <h3 class="font-bold text-white text-base">Programming Languages</h3>
+          <div class="space-y-2.5 text-xs">
+            <div class="flex items-center justify-between p-2 rounded-lg bg-slate-900/80 border border-slate-800">
+              <span class="font-medium text-slate-200">Java</span>
+              <span class="text-indigo-400 font-mono font-semibold">Proficient</span>
+            </div>
+            <div class="flex items-center justify-between p-2 rounded-lg bg-slate-900/80 border border-slate-800">
+              <span class="font-medium text-slate-200">Python</span>
+              <span class="text-indigo-400 font-mono font-semibold">Proficient</span>
+            </div>
+            <div class="flex items-center justify-between p-2 rounded-lg bg-slate-900/80 border border-slate-800">
+              <span class="font-medium text-slate-200">JavaScript (ES6+)</span>
+              <span class="text-indigo-400 font-mono font-semibold">Advanced</span>
+            </div>
+            <div class="flex items-center justify-between p-2 rounded-lg bg-slate-900/80 border border-slate-800">
+              <span class="font-medium text-slate-200">Kotlin / C</span>
+              <span class="text-indigo-400 font-mono font-semibold">Intermediate</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 2: Frontend -->
+        <div class="glass p-6 rounded-2xl border border-slate-800 hover:border-cyan-500/50 transition space-y-4">
+          <div class="w-10 h-10 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center">
+            <i data-lucide="layout" class="w-5 h-5"></i>
+          </div>
+          <h3 class="font-bold text-white text-base">Frontend & Mobile</h3>
+          <div class="space-y-2.5 text-xs">
+            <div class="flex items-center justify-between p-2 rounded-lg bg-slate-900/80 border border-slate-800">
+              <span class="font-medium text-slate-200">React.js</span>
+              <span class="text-cyan-400 font-mono font-semibold">Advanced</span>
+            </div>
+            <div class="flex items-center justify-between p-2 rounded-lg bg-slate-900/80 border border-slate-800">
+              <span class="font-medium text-slate-200">Tailwind CSS</span>
+              <span class="text-cyan-400 font-mono font-semibold">Advanced</span>
+            </div>
+            <div class="flex items-center justify-between p-2 rounded-lg bg-slate-900/80 border border-slate-800">
+              <span class="font-medium text-slate-200">HTML5 / CSS3</span>
+              <span class="text-cyan-400 font-mono font-semibold">Certified (300h)</span>
+            </div>
+            <div class="flex items-center justify-between p-2 rounded-lg bg-slate-900/80 border border-slate-800">
+              <span class="font-medium text-slate-200">Android Studio UI</span>
+              <span class="text-cyan-400 font-mono font-semibold">Native</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 3: Backend & Database -->
+        <div class="glass p-6 rounded-2xl border border-slate-800 hover:border-emerald-500/50 transition space-y-4">
+          <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
+            <i data-lucide="database" class="w-5 h-5"></i>
+          </div>
+          <h3 class="font-bold text-white text-base">Backend & Databases</h3>
+          <div class="space-y-2.5 text-xs">
+            <div class="flex items-center justify-between p-2 rounded-lg bg-slate-900/80 border border-slate-800">
+              <span class="font-medium text-slate-200">Node.js / Express</span>
+              <span class="text-emerald-400 font-mono font-semibold">Advanced</span>
+            </div>
+            <div class="flex items-center justify-between p-2 rounded-lg bg-slate-900/80 border border-slate-800">
+              <span class="font-medium text-slate-200">MongoDB / Atlas</span>
+              <span class="text-emerald-400 font-mono font-semibold">Proficient</span>
+            </div>
+            <div class="flex items-center justify-between p-2 rounded-lg bg-slate-900/80 border border-slate-800">
+              <span class="font-medium text-slate-200">MySQL / SQL</span>
+              <span class="text-emerald-400 font-mono font-semibold">Proficient</span>
+            </div>
+            <div class="flex items-center justify-between p-2 rounded-lg bg-slate-900/80 border border-slate-800">
+              <span class="font-medium text-slate-200">FastAPI & REST APIs</span>
+              <span class="text-emerald-400 font-mono font-semibold">Intermediate</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 4: AI & Developer Tools -->
+        <div class="glass p-6 rounded-2xl border border-slate-800 hover:border-amber-500/50 transition space-y-4">
+          <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center">
+            <i data-lucide="sparkles" class="w-5 h-5"></i>
+          </div>
+          <h3 class="font-bold text-white text-base">AI & Tooling</h3>
+          <div class="space-y-2.5 text-xs">
+            <div class="flex items-center justify-between p-2 rounded-lg bg-slate-900/80 border border-slate-800">
+              <span class="font-medium text-slate-200">Google Gemini API</span>
+              <span class="text-amber-400 font-mono font-semibold">Advanced</span>
+            </div>
+            <div class="flex items-center justify-between p-2 rounded-lg bg-slate-900/80 border border-slate-800">
+              <span class="font-medium text-slate-200">Prompt Engineering</span>
+              <span class="text-amber-400 font-mono font-semibold">Structured JSON</span>
+            </div>
+            <div class="flex items-center justify-between p-2 rounded-lg bg-slate-900/80 border border-slate-800">
+              <span class="font-medium text-slate-200">Git / GitHub / Postman</span>
+              <span class="text-amber-400 font-mono font-semibold">Daily User</span>
+            </div>
+            <div class="flex items-center justify-between p-2 rounded-lg bg-slate-900/80 border border-slate-800">
+              <span class="font-medium text-slate-200">Socket.io WebSockets</span>
+              <span class="text-amber-400 font-mono font-semibold">Real-Time</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section id="projects" class="max-w-6xl mx-auto px-4 sm:px-6 py-16 border-t border-slate-800/80">
+      <div class="text-center max-w-2xl mx-auto mb-12 space-y-2">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-indigo-500/10 text-indigo-400 text-xs font-semibold">
+          <i data-lucide="folder-git-2" class="w-3.5 h-3.5"></i>
+          Portfolio Showcases
+        </div>
+        <h2 class="text-3xl font-bold text-white tracking-tight">Featured Projects</h2>
+        <p class="text-slate-400 text-sm">Real-world applications engineered with modern stacks and AI capabilities.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Project 1: AI Resume Analyzer -->
+        <div class="glass rounded-2xl border border-slate-800 hover:border-indigo-500/50 transition overflow-hidden flex flex-col group">
+          <div class="p-6 pb-4 flex-1 space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-1 rounded-full text-[11px] font-bold tracking-wide uppercase bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                Major Capstone Project
+              </span>
+              <span class="text-xs text-slate-400 flex items-center gap-1 font-mono">
+                <i data-lucide="smartphone" class="w-3.5 h-3.5 text-indigo-400"></i> Android Native
+              </span>
+            </div>
+
+            <div>
+              <h3 class="text-xl font-bold text-white group-hover:text-indigo-400 transition">AI Resume Analyzer (Android App)</h3>
+              <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+                Native Android app that analyzes resumes against target job descriptions in real-time. Calls Google Gemini API directly from the client with zero backend server overhead, parsing structured JSON for ATS compatibility scores and missing keyword analysis.
+              </p>
+            </div>
+
+            <!-- Highlights -->
+            <div class="space-y-1.5 text-xs text-slate-300">
+              <div class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+                <span>Engineered complete 4-screen flow: Home, Upload, Loading, and Results.</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+                <span>Strict prompt engineering delivering structured JSON for ATS feedback.</span>
+              </div>
+            </div>
+
+            <!-- Tech Badges -->
+            <div class="flex flex-wrap gap-1.5 pt-2">
+              <span class="px-2.5 py-0.5 rounded-md bg-slate-800 text-[11px] font-mono text-slate-300">Java</span>
+              <span class="px-2.5 py-0.5 rounded-md bg-slate-800 text-[11px] font-mono text-slate-300">Kotlin</span>
+              <span class="px-2.5 py-0.5 rounded-md bg-slate-800 text-[11px] font-mono text-slate-300">Android Studio</span>
+              <span class="px-2.5 py-0.5 rounded-md bg-slate-800 text-[11px] font-mono text-indigo-300 border border-indigo-500/30">Google Gemini API</span>
+            </div>
+          </div>
+
+          <div class="p-4 bg-slate-900/60 border-t border-slate-800/80 flex items-center justify-between">
+            <span class="text-xs text-slate-400 font-mono">Native Android & LLM</span>
+            <a href="https://github.com/sathwikailu" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-indigo-400 hover:text-indigo-300 transition">
+              <span>View Source</span>
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 2: PortfolioAI -->
+        <div class="glass rounded-2xl border border-slate-800 hover:border-indigo-500/50 transition overflow-hidden flex flex-col group">
+          <div class="p-6 pb-4 flex-1 space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-1 rounded-full text-[11px] font-bold tracking-wide uppercase bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
+                Full-Stack AI Platform
+              </span>
+              <span class="text-xs text-slate-400 flex items-center gap-1 font-mono">
+                <i data-lucide="globe" class="w-3.5 h-3.5 text-indigo-400"></i> Web App
+              </span>
+            </div>
+
+            <div>
+              <h3 class="text-xl font-bold text-white group-hover:text-indigo-400 transition">PortfolioAI – Dynamic Career Hub</h3>
+              <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+                Full-stack web application enabling students to manage credentials and publish interactive portfolios. Includes JWT authentication, AI resume reviews, an automated interview-question generator, and 1-click PDF export.
+              </p>
+            </div>
+
+            <!-- Highlights -->
+            <div class="space-y-1.5 text-xs text-slate-300">
+              <div class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+                <span>AI skill-gap analyzer & dynamic interview question simulator.</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+                <span>Admin dashboard with secure JWT token verification & MongoDB Atlas.</span>
+              </div>
+            </div>
+
+            <!-- Tech Badges -->
+            <div class="flex flex-wrap gap-1.5 pt-2">
+              <span class="px-2.5 py-0.5 rounded-md bg-slate-800 text-[11px] font-mono text-slate-300">React.js</span>
+              <span class="px-2.5 py-0.5 rounded-md bg-slate-800 text-[11px] font-mono text-slate-300">Tailwind CSS</span>
+              <span class="px-2.5 py-0.5 rounded-md bg-slate-800 text-[11px] font-mono text-slate-300">FastAPI</span>
+              <span class="px-2.5 py-0.5 rounded-md bg-slate-800 text-[11px] font-mono text-slate-300">MongoDB Atlas</span>
+              <span class="px-2.5 py-0.5 rounded-md bg-slate-800 text-[11px] font-mono text-indigo-300 border border-indigo-500/30">Gemini API</span>
+            </div>
+          </div>
+
+          <div class="p-4 bg-slate-900/60 border-t border-slate-800/80 flex items-center justify-between">
+            <span class="text-xs text-slate-400 font-mono">React + FastAPI + MongoDB</span>
+            <a href="https://github.com/sathwikailu" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-indigo-400 hover:text-indigo-300 transition">
+              <span>View Source</span>
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 3: Code Buddy -->
+        <div class="glass rounded-2xl border border-slate-800 hover:border-indigo-500/50 transition overflow-hidden flex flex-col group">
+          <div class="p-6 pb-4 flex-1 space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-1 rounded-full text-[11px] font-bold tracking-wide uppercase bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">
+                Real-Time Web Platform
+              </span>
+              <span class="text-xs text-slate-400 flex items-center gap-1 font-mono">
+                <i data-lucide="radio" class="w-3.5 h-3.5 text-cyan-400"></i> Socket.io
+              </span>
+            </div>
+
+            <div>
+              <h3 class="text-xl font-bold text-white group-hover:text-indigo-400 transition">Code Buddy – Peer Programming Platform</h3>
+              <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+                Full-stack web platform matching students for peer coding based on proficiency, topic preferences, and active schedules with real-time socket communication and session management.
+              </p>
+            </div>
+
+            <!-- Highlights -->
+            <div class="space-y-1.5 text-xs text-slate-300">
+              <div class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+                <span>Socket.io real-time connection handling and room collaboration.</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+                <span>Bcryptjs password hashing, JWT sessions, and MongoDB schemas.</span>
+              </div>
+            </div>
+
+            <!-- Tech Badges -->
+            <div class="flex flex-wrap gap-1.5 pt-2">
+              <span class="px-2.5 py-0.5 rounded-md bg-slate-800 text-[11px] font-mono text-slate-300">React.js</span>
+              <span class="px-2.5 py-0.5 rounded-md bg-slate-800 text-[11px] font-mono text-slate-300">Node.js</span>
+              <span class="px-2.5 py-0.5 rounded-md bg-slate-800 text-[11px] font-mono text-slate-300">Express</span>
+              <span class="px-2.5 py-0.5 rounded-md bg-slate-800 text-[11px] font-mono text-slate-300">Socket.io</span>
+              <span class="px-2.5 py-0.5 rounded-md bg-slate-800 text-[11px] font-mono text-slate-300">MongoDB</span>
+            </div>
+          </div>
+
+          <div class="p-4 bg-slate-900/60 border-t border-slate-800/80 flex items-center justify-between">
+            <span class="text-xs text-slate-400 font-mono">MERN + WebSockets</span>
+            <a href="https://github.com/sathwikailu" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-indigo-400 hover:text-indigo-300 transition">
+              <span>View Source</span>
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 4: Virtual Pet Voice Assistant -->
+        <div class="glass rounded-2xl border border-slate-800 hover:border-indigo-500/50 transition overflow-hidden flex flex-col group">
+          <div class="p-6 pb-4 flex-1 space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-1 rounded-full text-[11px] font-bold tracking-wide uppercase bg-amber-500/20 text-amber-300 border border-amber-500/30">
+                Voice AI Automation
+              </span>
+              <span class="text-xs text-slate-400 flex items-center gap-1 font-mono">
+                <i data-lucide="mic" class="w-3.5 h-3.5 text-amber-400"></i> Python Speech
+              </span>
+            </div>
+
+            <div>
+              <h3 class="text-xl font-bold text-white group-hover:text-indigo-400 transition">Virtual Pet Voice Assistant</h3>
+              <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+                Interactive voice-controlled companion that processes spoken commands via Python speech recognition libraries, performing system automations, mood tracking, and vocal feedback.
+              </p>
+            </div>
+
+            <!-- Highlights -->
+            <div class="space-y-1.5 text-xs text-slate-300">
+              <div class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+                <span>Custom acoustic command parser with voice synthesis feedback.</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+                <span>Hands-free task execution and dynamic state responses.</span>
+              </div>
+            </div>
+
+            <!-- Tech Badges -->
+            <div class="flex flex-wrap gap-1.5 pt-2">
+              <span class="px-2.5 py-0.5 rounded-md bg-slate-800 text-[11px] font-mono text-slate-300">Python</span>
+              <span class="px-2.5 py-0.5 rounded-md bg-slate-800 text-[11px] font-mono text-slate-300">SpeechRecognition</span>
+              <span class="px-2.5 py-0.5 rounded-md bg-slate-800 text-[11px] font-mono text-slate-300">Pyttsx3</span>
+              <span class="px-2.5 py-0.5 rounded-md bg-slate-800 text-[11px] font-mono text-slate-300">Automation</span>
+            </div>
+          </div>
+
+          <div class="p-4 bg-slate-900/60 border-t border-slate-800/80 flex items-center justify-between">
+            <span class="text-xs text-slate-400 font-mono">Python Voice Engine</span>
+            <a href="https://github.com/sathwikailu" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-indigo-400 hover:text-indigo-300 transition">
+              <span>View Source</span>
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Interactive Live Demo Widget Section -->
+    <section id="demo" class="max-w-6xl mx-auto px-4 sm:px-6 py-16 border-t border-slate-800/80">
+      <div class="text-center max-w-2xl mx-auto mb-10 space-y-2">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-emerald-500/10 text-emerald-400 text-xs font-semibold">
+          <i data-lucide="terminal" class="w-3.5 h-3.5"></i>
+          Interactive Experience
+        </div>
+        <h2 class="text-3xl font-bold text-white tracking-tight">Try Sathwik's AI Resume Analyzer Simulator</h2>
+        <p class="text-slate-400 text-sm">Experience the logic behind Sathwik's Android Gemini API resume-scoring engine in real time below!</p>
+      </div>
+
+      <div class="glass rounded-3xl border border-slate-800 p-6 sm:p-8 max-w-4xl mx-auto shadow-2xl relative overflow-hidden">
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          
+          <!-- Input Side -->
+          <div class="space-y-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-300 uppercase tracking-wide mb-1">Target Job Role</label>
+              <select id="simRole" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-indigo-500 transition">
+                <option value="fullstack">Full-Stack Software Developer (React + Node.js)</option>
+                <option value="android">Android & AI Integration Engineer (Java/Kotlin + Gemini)</option>
+                <option value="python">Backend & AI Specialist (Python + FastAPI)</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-slate-300 uppercase tracking-wide mb-1">Candidate Profile Snippet</label>
+              <textarea id="simResume" rows="5" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-xs text-slate-300 font-mono focus:outline-none focus:border-indigo-500 transition" placeholder="Paste resume skills or summary...">B.Tech CSE student (9.05 CGPA). Experienced in Java, Python, React.js, Node.js, REST APIs, MongoDB, and Gemini API integration. Built AI Resume Analyzer and Peer Coding platform.</textarea>
+            </div>
+
+            <button id="runSimBtn" onclick="runAnalyzerSim()" class="w-full py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-indigo-600 hover:from-emerald-600 hover:to-indigo-700 text-white font-semibold text-xs flex items-center justify-center gap-2 shadow-lg shadow-emerald-500/20 transition">
+              <i data-lucide="sparkles" class="w-4 h-4"></i>
+              <span>Simulate Gemini ATS Evaluation</span>
+            </button>
+          </div>
+
+          <!-- Output Side -->
+          <div class="bg-slate-950/80 rounded-2xl border border-slate-800 p-5 flex flex-col justify-between font-mono">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                <span class="text-xs text-slate-400">STATUS: <span class="text-emerald-400">READY</span></span>
+                <span class="text-[10px] text-slate-500">ENGINE: GEMINI-PRO-ATS</span>
+              </div>
+
+              <!-- Score Indicator -->
+              <div class="flex items-center gap-4 py-2">
+                <div class="w-16 h-16 rounded-2xl bg-indigo-500/10 border border-indigo-500/30 flex flex-col items-center justify-center">
+                  <span id="scoreVal" class="text-2xl font-extrabold text-emerald-400">96%</span>
+                  <span class="text-[9px] text-slate-400 uppercase">Match</span>
+                </div>
+                <div class="space-y-1 text-xs">
+                  <p class="font-bold text-white" id="verdict">Excellent ATS Alignment</p>
+                  <p class="text-[11px] text-slate-400" id="subVerdict">High keyword density and modern stack compatibility.</p>
+                </div>
+              </div>
+
+              <!-- Extracted Matches -->
+              <div class="space-y-1.5 pt-2">
+                <span class="text-[11px] text-slate-400">Matched Core Competencies:</span>
+                <div id="matchedPills" class="flex flex-wrap gap-1">
+                  <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 text-[10px]">React.js</span>
+                  <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 text-[10px]">Node.js</span>
+                  <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 text-[10px]">Gemini API</span>
+                  <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 text-[10px]">MongoDB</span>
+                  <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 text-[10px]">Java/Python</span>
+                </div>
+              </div>
+
+              <div class="space-y-1 pt-1">
+                <span class="text-[11px] text-slate-400">AI Actionable Recommendation:</span>
+                <p id="recText" class="text-[11px] text-slate-300 leading-relaxed bg-slate-900/90 p-2.5 rounded-lg border border-slate-800">
+                  Candidate demonstrates verified end-to-end full-stack capabilities with production-style AI integration. Ready for junior/associate engineering deployment.
+                </p>
+              </div>
+            </div>
+
+            <div class="text-[10px] text-slate-500 pt-3 text-right">
+              JSON Output Validated ⚡ Response Time: 320ms
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="max-w-6xl mx-auto px-4 sm:px-6 py-16 border-t border-slate-800/80">
+      <div class="text-center max-w-2xl mx-auto mb-12 space-y-2">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-indigo-500/10 text-indigo-400 text-xs font-semibold">
+          <i data-lucide="award" class="w-3.5 h-3.5"></i>
+          Verified Credentials
+        </div>
+        <h2 class="text-3xl font-bold text-white tracking-tight">Certifications & Training</h2>
+        <p class="text-slate-400 text-sm">Industry-standard certifications validating software development, web architecture, and AI engineering.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Cert 1: Anthropic Claude Code 101 -->
+        <div class="glass p-6 rounded-2xl border border-slate-800 hover:border-indigo-500/50 transition space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="w-10 h-10 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center font-mono font-bold text-sm">AI</span>
+            <span class="text-[11px] font-mono text-purple-300 bg-purple-500/10 px-2 py-0.5 rounded border border-purple-500/20">Anthropic</span>
+          </div>
+          <h3 class="font-bold text-white text-base">Claude Code 101</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            AI-assisted software development, agentic coding workflows, and automated context management for modern software delivery.
+          </p>
+          <div class="text-[11px] text-slate-500 pt-1 font-mono">Issued 2026</div>
+        </div>
+
+        <!-- Cert 2: freeCodeCamp Responsive Web Design -->
+        <div class="glass p-6 rounded-2xl border border-slate-800 hover:border-indigo-500/50 transition space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-mono font-bold text-sm">WEB</span>
+            <span class="text-[11px] font-mono text-emerald-300 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">freeCodeCamp</span>
+          </div>
+          <h3 class="font-bold text-white text-base">Responsive Web Design (300h)</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Verified 300-hour comprehensive curriculum covering semantic HTML5, modern CSS3 layouts (Flexbox, Grid), and responsive UX best practices.
+          </p>
+          <div class="text-[11px] text-slate-500 pt-1 font-mono">Issued 2025</div>
+        </div>
+
+        <!-- Cert 3: Google Python Crash Course -->
+        <div class="glass p-6 rounded-2xl border border-slate-800 hover:border-indigo-500/50 transition space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="w-10 h-10 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center font-mono font-bold text-sm">PY</span>
+            <span class="text-[11px] font-mono text-blue-300 bg-blue-500/10 px-2 py-0.5 rounded border border-blue-500/20">Google</span>
+          </div>
+          <h3 class="font-bold text-white text-base">Crash Course on Python</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Core Python programming, data structures, automation scripts, and object-oriented principles by Google.
+          </p>
+          <div class="text-[11px] text-slate-500 pt-1 font-mono">Verified Certificate</div>
+        </div>
+
+        <!-- Cert 4: Generative AI Studio -->
+        <div class="glass p-6 rounded-2xl border border-slate-800 hover:border-indigo-500/50 transition space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center font-mono font-bold text-sm">GEN</span>
+            <span class="text-[11px] font-mono text-amber-300 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">Google Cloud</span>
+          </div>
+          <h3 class="font-bold text-white text-base">Generative AI Studio</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Foundation of generative models, prompt tuning, temperature parameters, and embedding techniques on Google Cloud ecosystem.
+          </p>
+          <div class="text-[11px] text-slate-500 pt-1 font-mono">Cloud Credential</div>
+        </div>
+
+        <!-- Cert 5: Machine Learning with ChatGPT -->
+        <div class="glass p-6 rounded-2xl border border-slate-800 hover:border-indigo-500/50 transition space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="w-10 h-10 rounded-xl bg-teal-500/20 text-teal-400 flex items-center justify-center font-mono font-bold text-sm">ML</span>
+            <span class="text-[11px] font-mono text-teal-300 bg-teal-500/10 px-2 py-0.5 rounded border border-teal-500/20">AI Institute</span>
+          </div>
+          <h3 class="font-bold text-white text-base">Machine Learning & LLMs</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Hands-on machine learning workflows, model evaluation, and integrating conversational LLM APIs into web architectures.
+          </p>
+          <div class="text-[11px] text-slate-500 pt-1 font-mono">Verified Credential</div>
+        </div>
+
+        <!-- Quick Summary Box -->
+        <div class="glass p-6 rounded-2xl border border-dashed border-slate-700 flex flex-col justify-center items-center text-center space-y-2">
+          <i data-lucide="graduation-cap" class="w-8 h-8 text-indigo-400"></i>
+          <h4 class="text-sm font-bold text-white">Always Learning</h4>
+          <p class="text-xs text-slate-400">Continuously expanding skills in scalable system architecture and autonomous AI agents.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Contact & Hire Me Section -->
+    <section id="contact" class="max-w-6xl mx-auto px-4 sm:px-6 py-16 border-t border-slate-800/80">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+        
+        <div class="lg:col-span-5 space-y-4">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-indigo-500/10 text-indigo-400 text-xs font-semibold">
+            <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
+            Let's Connect
+          </div>
+          <h2 class="text-3xl font-bold text-white tracking-tight">Ready to Build Scalable & Intelligent Solutions</h2>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            I'm currently actively exploring <strong>Software Engineering</strong>, <strong>Full-Stack Developer</strong>, and <strong>AI Integration</strong> roles. If you have an opportunity, collaboration, or question, feel free to reach out!
+          </p>
+
+          <div class="space-y-3 pt-2 text-xs">
+            <a href="mailto:sathwikailu57@gmail.com" class="flex items-center gap-3 p-3.5 rounded-xl glass border border-slate-800 hover:border-slate-700 text-slate-200 transition group">
+              <div class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0">
+                <i data-lucide="mail" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <p class="text-slate-400 text-[10px]">Email Address</p>
+                <p class="font-mono font-medium text-white group-hover:text-indigo-400 transition">sathwikailu57@gmail.com</p>
+              </div>
+            </a>
+
+            <a href="tel:+918143632409" class="flex items-center gap-3 p-3.5 rounded-xl glass border border-slate-800 hover:border-slate-700 text-slate-200 transition group">
+              <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
+                <i data-lucide="phone" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <p class="text-slate-400 text-[10px]">Phone / WhatsApp</p>
+                <p class="font-mono font-medium text-white group-hover:text-indigo-400 transition">+91 8143632409</p>
+              </div>
+            </a>
+
+            <a href="https://linkedin.com/in/sathwik-ailu-a81623372" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3.5 rounded-xl glass border border-slate-800 hover:border-slate-700 text-slate-200 transition group">
+              <div class="w-8 h-8 rounded-lg bg-blue-500/20 text-blue-400 flex items-center justify-center shrink-0">
+                <i data-lucide="linkedin" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <p class="text-slate-400 text-[10px]">LinkedIn Profile</p>
+                <p class="font-mono font-medium text-white group-hover:text-indigo-400 transition">linkedin.com/in/sathwik-ailu-a81623372</p>
+              </div>
+            </a>
+
+            <a href="https://github.com/sathwikailu" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3.5 rounded-xl glass border border-slate-800 hover:border-slate-700 text-slate-200 transition group">
+              <div class="w-8 h-8 rounded-lg bg-purple-500/20 text-purple-400 flex items-center justify-center shrink-0">
+                <i data-lucide="github" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <p class="text-slate-400 text-[10px]">GitHub Repository</p>
+                <p class="font-mono font-medium text-white group-hover:text-indigo-400 transition">github.com/sathwikailu</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Direct Message Box -->
+        <div class="lg:col-span-7">
+          <div class="glass p-6 sm:p-8 rounded-3xl border border-slate-800 space-y-4">
+            <h3 class="text-xl font-bold text-white">Send a Direct Message</h3>
+            <p class="text-xs text-slate-400">Fill out this quick form to shoot an email directly to Sathwik.</p>
+            
+            <form onsubmit="handleContact(event)" class="space-y-4 text-xs">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block font-medium text-slate-300 mb-1">Your Name</label>
+                  <input type="text" id="contactName" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2.5 text-white focus:outline-none focus:border-indigo-500 transition" placeholder="e.g. Hiring Manager" />
+                </div>
+                <div>
+                  <label class="block font-medium text-slate-300 mb-1">Your Email</label>
+                  <input type="email" id="contactEmail" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2.5 text-white focus:outline-none focus:border-indigo-500 transition" placeholder="e.g. recruiter@company.com" />
+                </div>
+              </div>
+
+              <div>
+                <label class="block font-medium text-slate-300 mb-1">Subject</label>
+                <input type="text" id="contactSubject" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2.5 text-white focus:outline-none focus:border-indigo-500 transition" placeholder="Opportunity for Software Engineer Role" />
+              </div>
+
+              <div>
+                <label class="block font-medium text-slate-300 mb-1">Message</label>
+                <textarea id="contactMsg" rows="4" required class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-white focus:outline-none focus:border-indigo-500 transition" placeholder="Hi Sathwik, we loved your projects and would like to discuss..."></textarea>
+              </div>
+
+              <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-indigo-500 to-emerald-500 hover:from-indigo-600 hover:to-emerald-600 text-white font-semibold text-xs flex items-center justify-center gap-2 shadow-lg shadow-indigo-500/25 transition">
+                <i data-lucide="send" class="w-4 h-4"></i>
+                <span>Send Message via Email Client</span>
+              </button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800/80 py-8 px-4 sm:px-6 relative z-10 text-center text-xs text-slate-500">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        © 2026 <strong class="text-slate-400">Sathwik Ailu</strong>. All rights reserved.
+      </div>
+      <div class="flex items-center gap-4 text-slate-400">
+        <a href="https://github.com/sathwikailu" target="_blank" class="hover:text-indigo-400 transition">GitHub</a>
+        <a href="https://linkedin.com/in/sathwik-ailu-a81623372" target="_blank" class="hover:text-indigo-400 transition">LinkedIn</a>
+        <a href="mailto:sathwikailu57@gmail.com" class="hover:text-indigo-400 transition">Email</a>
+        <a href="tel:+918143632409" class="hover:text-indigo-400 transition">Call</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Typewriter Effect
+    const words = [
+      "Full-Stack Web Developer",
+      "AI & LLM Integration Specialist",
+      "Native Android Developer",
+      "B.Tech CSE @ MRCET (9.05 CGPA)"
+    ];
+    let i = 0;
+    let timer;
+
+    function typingEffect() {
+      let word = words[i].split("");
+      var loopTyping = function() {
+        if (word.length > 0) {
+          document.getElementById('typewriter').innerHTML += word.shift();
+        } else {
+          setTimeout(deletingEffect, 2000);
+          return false;
+        }
+        timer = setTimeout(loopTyping, 75);
+      };
+      loopTyping();
+    }
+
+    function deletingEffect() {
+      let word = words[i].split("");
+      var loopDeleting = function() {
+        if (word.length > 0) {
+          word.pop();
+          document.getElementById('typewriter').innerHTML = word.join("");
+        } else {
+          if (words.length > (i + 1)) {
+            i++;
+          } else {
+            i = 0;
+          }
+          setTimeout(typingEffect, 500);
+          return false;
+        }
+        timer = setTimeout(loopDeleting, 35);
+      };
+      loopDeleting();
+    }
+
+    typingEffect();
+
+    // Contact Form Action
+    function handleContact(e) {
+      e.preventDefault();
+      const name = document.getElementById('contactName').value;
+      const email = document.getElementById('contactEmail').value;
+      const subject = document.getElementById('contactSubject').value;
+      const msg = document.getElementById('contactMsg').value;
+      
+      const mailtoUrl = `mailto:sathwikailu57@gmail.com?subject=${encodeURIComponent(subject + ' - from ' + name)}&body=${encodeURIComponent(msg + '\n\nSender Email: ' + email)}`;
+      window.location.href = mailtoUrl;
+    }
+
+    // Interactive Simulator
+    function runAnalyzerSim() {
+      const btn = document.getElementById('runSimBtn');
+      const role = document.getElementById('simRole').value;
+      const scoreVal = document.getElementById('scoreVal');
+      const verdict = document.getElementById('verdict');
+      const subVerdict = document.getElementById('subVerdict');
+      const pills = document.getElementById('matchedPills');
+      const recText = document.getElementById('recText');
+
+      btn.disabled = true;
+      btn.innerHTML = `<i data-lucide="loader-2" class="w-4 h-4 animate-spin"></i><span>Analyzing with Gemini Prompt...</span>`;
+      lucide.createIcons();
+
+      setTimeout(() => {
+        btn.disabled = false;
+        btn.innerHTML = `<i data-lucide="sparkles" class="w-4 h-4"></i><span>Simulate Gemini ATS Evaluation</span>`;
+        lucide.createIcons();
+
+        if (role === 'fullstack') {
+          scoreVal.innerText = "96%";
+          verdict.innerText = "High-Tier Full-Stack Match";
+          subVerdict.innerText = "Exceptional coverage of React, Node.js, and MongoDB.";
+          pills.innerHTML = `
+            <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 text-[10px]">React.js</span>
+            <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 text-[10px]">Node.js</span>
+            <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 text-[10px]">Express.js</span>
+            <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 text-[10px]">MongoDB Atlas</span>
+            <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 text-[10px]">REST & Socket.io</span>
+          `;
+          recText.innerText = "Strong candidate profile with complete MERN and real-time collaboration competencies. Recommended for Junior Full-Stack Developer.";
+        } else if (role === 'android') {
+          scoreVal.innerText = "94%";
+          verdict.innerText = "Strong Native Mobile & AI Match";
+          subVerdict.innerText = "Demonstrated zero-backend client-side Gemini LLM integration.";
+          pills.innerHTML = `
+            <span class="px-2 py-0.5 rounded bg-indigo-500/20 text-indigo-300 text-[10px]">Java & Kotlin</span>
+            <span class="px-2 py-0.5 rounded bg-indigo-500/20 text-indigo-300 text-[10px]">Android Studio</span>
+            <span class="px-2 py-0.5 rounded bg-indigo-500/20 text-indigo-300 text-[10px]">Gemini API</span>
+            <span class="px-2 py-0.5 rounded bg-indigo-500/20 text-indigo-300 text-[10px]">JSON Parser</span>
+          `;
+          recText.innerText = "Excellent practical experience architecting native mobile UI screens and parsing direct LLM inference outputs.";
+        } else {
+          scoreVal.innerText = "92%";
+          verdict.innerText = "Solid Python & Backend Match";
+          subVerdict.innerText = "Strong algorithm, OOP, and FastAPI backend foundation.";
+          pills.innerHTML = `
+            <span class="px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 text-[10px]">Python</span>
+            <span class="px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 text-[10px]">FastAPI</span>
+            <span class="px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 text-[10px]">SQL / DBMS</span>
+            <span class="px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 text-[10px]">Google Certified</span>
+          `;
+          recText.innerText = "Python certification from Google and hands-on ML / voice automation projects highlight high capability for backend engineering.";
+        }
+      }, 500);
+    }
+  </script>
+</body>
+</html>
